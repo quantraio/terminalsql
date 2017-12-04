@@ -1,0 +1,45 @@
+-- Role: anon
+-- DROP ROLE anon;
+
+CREATE ROLE anon WITH
+  NOLOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+-- Role: authenticator
+-- DROP ROLE authenticator;
+
+CREATE ROLE authenticator WITH
+  NOLOGIN
+  NOSUPERUSER
+  NOINHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+GRANT anon TO authenticator;
+
+-- Role: read_user
+-- DROP ROLE read_user;
+
+CREATE ROLE read_user WITH
+  NOLOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
+
+-- Role: write_user
+-- DROP ROLE write_user;
+
+CREATE ROLE write_user WITH
+  NOLOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION;
